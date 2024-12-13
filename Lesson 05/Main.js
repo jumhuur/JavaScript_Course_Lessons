@@ -20,4 +20,5 @@ const Price = 13;
 //const let = 1000; Error
 //const const = 900; Error
 
+// we use
 const User = "maxamad";
