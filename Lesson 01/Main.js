@@ -1,3 +1,4 @@
+// qaar kamida calaamadaha 
 //Curly Braces
 {}
 
@@ -33,7 +34,7 @@
 =
 
 
-//Arrow
+//Arrow 
 
 =>
 

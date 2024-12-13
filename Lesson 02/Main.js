@@ -1,4 +1,4 @@
-// halkani waa alert
+// halkani waa alert waa comment sare
 alert(12); // alert sheegaya qiimaha 12
 // alert
 

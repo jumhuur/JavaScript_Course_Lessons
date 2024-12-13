@@ -1,3 +1,4 @@
+// var
 var x = 5;
 var y = 6;
 var z = 7;
@@ -8,6 +9,7 @@ console.log(x);
 console.log(y);
 console.log(z);
 
+// let
 let x = 8;
 let y = 9;
 let z = 10;
@@ -16,6 +18,7 @@ console.log(x);
 console.log(y);
 console.log(z);
 
+// const
 const x = 11;
 const y = 12;
 const z = 13;
