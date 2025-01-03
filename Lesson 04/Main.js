@@ -29,11 +29,6 @@ console.log(x);
 console.log(y);
 console.log(z);
 
-550;
-11;
-12;
-13;
-
 var Age = 90;
 let Price = 130;
 const Dherer = 176;
