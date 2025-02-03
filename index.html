@@ -5,69 +5,211 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      /* Reset styles */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Inter", sans-serif;
       }
 
-      h2 {
-        margin: 15px 0px;
-      }
-
+      /* Body background */
       body {
-        font-family: Arial, sans-serif;
-        padding: 25px;
-        margin: auto;
-        background-color: #f4f4f4;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
       }
 
-      .container {
+      /* Product container using Grid */
+      .product-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
+        width: 90%;
+        max-width: 300px;
       }
 
-      .card {
-        background: #fff;
-        border-radius: 3px;
+      /* Product Card */
+      .product-card {
+        background: white;
+        border-radius: 2px;
         overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        padding-bottom: 15px;
       }
 
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      }
-
-      .card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-
-      .card-content {
-        padding: 15px;
-      }
-
-      .card-title {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-        color: #333;
+      /* Discount Badge */
+      .discount-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #1c542d;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.9rem;
         font-weight: bold;
       }
 
-      .card-info {
-        font-size: 1rem;
+      /* Product Image */
+      .product-card img {
+        width: 100%;
+        height: 250px;
+        display: block;
+      }
+
+      /* Product Info */
+      .product-info {
+        padding: 15px;
+      }
+
+      /* Rating */
+      .rating {
+        font-size: 0.9rem;
+        color: #ffaa00;
+        font-weight: bold;
+      }
+
+      /* Category */
+      .category {
+        font-size: 0.8rem;
         color: #666;
-        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+
+      /* Product Name */
+      .product-name {
+        font-size: 1.2rem;
+        margin-top: 5px;
+        font-weight: bold;
+      }
+
+      /* Price Section */
+      .price {
+        margin-top: 8px;
+        font-size: 1.1rem;
+      }
+
+      .current-price {
+        color: #d32f2f;
+        font-weight: bold;
+      }
+
+      .old-price {
+        text-decoration: line-through;
+        color: #888;
+        margin-left: 5px;
+      }
+
+      /* Countdown Timer */
+      .countdown-timer {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        background: #1c542d;
+        color: white;
+        font-weight: bold;
+      }
+
+      .timer-box {
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      .timer-box span {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: normal;
+      }
+
+      /* Responsive Design */
+      @media (min-width: 600px) {
+        .product-container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (min-width: 900px) {
+        .product-container {
+          grid-template-columns: 1fr 1fr 1fr;
+          max-width: 1200px;
+        }
       }
     </style>
   </head>
-  <body style="background-color: #333; color: #f4f4f4; text-align: center">
-    <h2>JavaScript Course</h2>
-    <h3>Week 08</h3>
+  <body style="background-color: #888; color: #f5f5f5">
+    <!-- <div class="product-container">
+      <div class="product-card">
+        <div class="discount-badge">30% off</div>
+        <img
+          src="https://cdn.pixabay.com/photo/2014/08/10/18/00/razor-414909_1280.jpg"
+          alt="Argan Glow"
+        />
+        <div class="countdown-timer">
+          <div class="timer-box">05 <span>Days</span></div>
+          <div class="timer-box">12 <span>Hours</span></div>
+          <div class="timer-box">30 <span>Mins</span></div>
+          <div class="timer-box">25 <span>Secs</span></div>
+        </div>
+        <div class="product-info">
+          <span class="rating">⭐ 5.0</span>
+          <p class="category">Hair Care</p>
+          <h3 class="product-name">Argan Glow</h3>
+          <p class="price">
+            <span class="current-price">$63.00</span>
+            <span class="old-price">$90.00</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="discount-badge">20% off</div>
+        <img
+          src="https://cdn.pixabay.com/photo/2015/08/01/21/13/hygiene-870763_1280.jpg"
+          alt="SilkSkin Serum"
+        />
+        <div class="countdown-timer">
+          <div class="timer-box">05 <span>Days</span></div>
+          <div class="timer-box">12 <span>Hours</span></div>
+          <div class="timer-box">30 <span>Mins</span></div>
+          <div class="timer-box">25 <span>Secs</span></div>
+        </div>
+        <div class="product-info">
+          <span class="rating">⭐ 4.8</span>
+          <p class="category">Skin Care</p>
+          <h3 class="product-name">SilkSkin Serum</h3>
+          <p class="price">
+            <span class="current-price">$48.00</span>
+            <span class="old-price">$60.00</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="discount-badge">50% off</div>
+        <img
+          src="https://cdn.pixabay.com/photo/2015/07/28/20/45/soap-864951_1280.jpg"
+          alt="SilkSculpt Serum"
+        />
+        <div class="countdown-timer">
+          <div class="timer-box">05 <span>Days</span></div>
+          <div class="timer-box">12 <span>Hours</span></div>
+          <div class="timer-box">30 <span>Mins</span></div>
+          <div class="timer-box">25 <span>Secs</span></div>
+        </div>
+        <div class="product-info">
+          <span class="rating">⭐ 4.9</span>
+          <p class="category">Skin Care</p>
+          <h3 class="product-name">SilkSculpt Serum</h3>
+          <p class="price">
+            <span class="current-price">$35.00</span>
+            <span class="old-price">$70.00</span>
+          </p>
+        </div>
+      </div>
+    </div> -->
     <script src="/Main.js"></script>
   </body>
 </html>
