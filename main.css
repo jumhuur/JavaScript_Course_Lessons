@@ -1,0 +1,142 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* White text for contrast */
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Card Container */
+.cards {
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 15px;
+}
+.card {
+  height: 370px;
+  background-color: #1e1e2f; /* Dark card background */
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 350px;
+  text-align: center;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Card Image */
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Card Content */
+.card-content {
+  padding: 16px;
+}
+
+/* Flower Name */
+.flower-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #6366f1; /* Accent color */
+}
+
+/* Flower Details */
+.flower-details {
+  margin-bottom: 16px;
+}
+
+/* Color Circle */
+.colors {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+}
+.color-circle {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 8px;
+  border-radius: 50%;
+  /* background-color: #6366f1; Default color for circles */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Size Circle */
+.zises {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: wrap row;
+}
+.size-circle {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 8px;
+  border-radius: 50%;
+  background-color: #6366f1; /* Pinkish color for sizes */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Circle Text */
+.circle-text {
+  font-size: 0.675rem;
+  text-transform: uppercase;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+  background-color: #6366f1; /* Accent color */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #4f46e5; /* Darker shade for hover effect */
+  transform: scale(1.05);
+}
+
+.add-to-cart:active {
+  background-color: #4338ca; /* Even darker shade on click */
+}
