@@ -1,4 +1,5 @@
-// Example
+// array of objects
+// 3000 students
 const Users = [
   {
     name: "Ali Mohamed",
@@ -102,38 +103,19 @@ const Users = [
   },
 ];
 
-let Filtred = Users.filter((User) => {
-  return User.age > 15 && User.city === "Burco";
+console.log(Users);
+let Magaalooyin = Users.map((User) => {
+  return User.city;
 });
 
-if (Filtred.length > 0) {
-  document.write(`<p class="Text">${Filtred.length} Users Found </p>`);
-} else {
-  document.write(`<p class="Error">User not Found </p>`);
-}
+let age = Users.map((user) => {
+  return user.age;
+});
 
-document.write(`<div class="container">`);
-for (let i = 0; i < Filtred.length; i++) {
-  // loop
-  document.write(`<div class="card">`);
-  document.write(`<img src="${Filtred[i].image}" alt="User Image" />`);
-  document.write(`<div class="card-content">`);
-  // gudaha Card-ka
-  document.write(`<h3>${Filtred[i].name}</h3>`);
-  document.write(`<p><strong>City:</strong> ${Filtred[i].city}</p>`);
-  document.write(`<p><strong>Age:</strong> ${Filtred[i].age}</p>`);
+let names = Users.map(function (User) {
+  return User.name;
+});
 
-  document.write(`<div class="skills">`);
-
-  // nested loop
-  for (let x = 0; x < Filtred[i].skills.length; x++) {
-    document.write(`<span class="skill">${Filtred[i].skills[x]}</span>`);
-    // document.write(`<span class="skill">React</span>`);
-    // document.write(`<span class="skill">Node.js</span>`);
-  }
-  document.write(`</div>`);
-  document.write(`</div>`);
-
-  document.write(`</div>`);
-}
-document.write(`</div>`);
+console.log(Magaalooyin);
+console.log(age);
+console.log(names);

@@ -102,17 +102,17 @@ const Users = [
   },
 ];
 
-let Filtred = Users.filter((User) => {
-  return User.age > 15 && User.city === "Burco";
+let Filtred = Users.filter((user) => {
+  return user.age > 20 && user.gender === "Male";
 });
 
 if (Filtred.length > 0) {
-  document.write(`<p class="Text">${Filtred.length} Users Found </p>`);
+  document.write(`<p class="Text">${Filtred.length} Users Found</p>`);
 } else {
-  document.write(`<p class="Error">User not Found </p>`);
+  document.write(`<p class="Error">No users found</p>`);
 }
-
 document.write(`<div class="container">`);
+
 for (let i = 0; i < Filtred.length; i++) {
   // loop
   document.write(`<div class="card">`);
