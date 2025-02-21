@@ -20,7 +20,7 @@ p.Text {
   font-weight: bold;
 }
 p.Error {
-  color: #c40347;
+  color: #f5276f;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -44,6 +44,24 @@ p.Error {
   position: relative;
 }
 
+.card button {
+  width: 50%;
+  height: 35px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  margin: 10px 0px;
+  border: solid 1.5px #6366f1;
+  color: #6366f1;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+.card button.btnout {
+  cursor: not-allowed;
+}
+
 .card:hover {
   transform: translateY(-10px);
 }
@@ -61,6 +79,14 @@ p.Error {
 
 .card-content {
   padding: 15px;
+}
+
+.card-content p.outStock {
+  color: #f5276f;
+}
+
+.card-content p.inStock {
+  color: #5fa800;
 }
 
 .card h3 {
