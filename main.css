@@ -1,142 +1,92 @@
-/* Reset Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* Body Style */
 body {
-  background-color: #121212; /* Dark background */
-  color: #ffffff; /* White text for contrast */
-  font-family: "Inter", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  flex-flow: wrap column;
+  margin: 20px 0px;
+  background-color: #f4f4f4;
 }
 
-/* Card Container */
-.cards {
-  padding: 15px;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 15px;
+p.Text {
+  color: #6366f1;
+  font-size: 1rem;
+  font-weight: bold;
 }
+p.Error {
+  color: #c40347;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
 .card {
-  height: 370px;
-  background-color: #1e1e2f; /* Dark card background */
-  border-radius: 4px;
+  width: 280px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 350px;
   text-align: center;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
 }
 
-/* Hover Effect */
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+  transform: translateY(-10px);
 }
 
-/* Card Image */
-.card-image {
-  width: 100%;
-  height: auto;
+.card img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Card Content */
+.card:hover img {
+  transform: scale(1.1);
+}
+
 .card-content {
-  padding: 16px;
+  padding: 15px;
 }
 
-/* Flower Name */
-.flower-name {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #6366f1; /* Accent color */
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #6366f1;
 }
 
-/* Flower Details */
-.flower-details {
-  margin-bottom: 16px;
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
 }
 
-/* Color Circle */
-.colors {
-  width: 100%;
+.skills {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  flex-flow: wrap row;
+  gap: 5px;
+  margin-top: 10px;
 }
-.color-circle {
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  margin: 8px;
-  border-radius: 50%;
-  /* background-color: #6366f1; Default color for circles */
+
+.skill {
+  background: #6366f1;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Size Circle */
-.zises {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-flow: wrap row;
-}
-.size-circle {
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  margin: 8px;
-  border-radius: 50%;
-  background-color: #6366f1; /* Pinkish color for sizes */
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Circle Text */
-.circle-text {
-  font-size: 0.675rem;
-  text-transform: uppercase;
-}
-
-/* Add to Cart Button */
-.add-to-cart {
-  background-color: #6366f1; /* Accent color */
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 16px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.add-to-cart:hover {
-  background-color: #4f46e5; /* Darker shade for hover effect */
-  transform: scale(1.05);
-}
-
-.add-to-cart:active {
-  background-color: #4338ca; /* Even darker shade on click */
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
 }

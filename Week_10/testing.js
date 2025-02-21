@@ -1,4 +1,71 @@
-// Example
+let Key = "Live";
+let Person = {
+  // Properties
+  Name: "Cali",
+  Age: 23,
+  skills: ["Html", "Css", "Js"],
+  Live: true,
+  "Parent Name": "caisha",
+  // Methods
+  sayhello: function () {
+    return "Hello";
+  },
+};
+console.log("----- Dot Notation --------");
+console.log(Person.Name);
+console.log(Person.Age);
+console.log(Person.skills);
+console.log(Person.sayhello());
+console.log("----- Bracket Notation --------");
+console.log(Person["Name"]);
+console.log(Person["Age"]);
+console.log(Person["skills"]);
+console.log(Person["sayhello"]());
+console.log(Person[Key]); //undefined
+
+const User = new Object({
+  studentName: "Aisha",
+  studentAge: 20,
+});
+
+const phone = new Object({
+  phoneBrand: "Apple",
+  phoneModel: "iPhone 14",
+  phonePrice: 999,
+});
+
+const Student = {};
+console.log(Student);
+Student.name = "cabdirxamaan Mawliid";
+Student.Class = "4A";
+Student.Subjects = ["English", "Arbic", "Islamic", "biolgy"];
+console.log(Student);
+
+console.log(Student.name);
+console.log(Student["Class"]);
+
+Student.name = "yaasir warsame";
+Student.Class = "2C";
+
+console.log(Student.name);
+console.log(Student["Class"]);
+
+const UserApp = {
+  Name: "maxamad",
+  leval: 2,
+  Address: {
+    Ethopia: "Jigjiga",
+    Soomaliland: {
+      Address01: "Hargaysa | 200 str",
+      Address02: "Burco | Hodan",
+    },
+  },
+};
+
+console.log(UserApp.Address.Ethopia);
+console.log(UserApp.Address.Soomaliland.Address01);
+console.log(UserApp.Address.Soomaliland.Address02);
+
 const Users = [
   {
     name: "Ali Mohamed",
@@ -102,38 +169,30 @@ const Users = [
   },
 ];
 
-let Filtred = Users.filter((User) => {
-  return User.age > 15 && User.city === "Burco";
+console.log(Users);
+
+// Magacyada
+let names = Users.map((User) => {
+  return `${User.name}`;
 });
-
-if (Filtred.length > 0) {
-  document.write(`<p class="Text">${Filtred.length} Users Found </p>`);
-} else {
-  document.write(`<p class="Error">User not Found </p>`);
-}
-
-document.write(`<div class="container">`);
-for (let i = 0; i < Filtred.length; i++) {
-  // loop
-  document.write(`<div class="card">`);
-  document.write(`<img src="${Filtred[i].image}" alt="User Image" />`);
-  document.write(`<div class="card-content">`);
-  // gudaha Card-ka
-  document.write(`<h3>${Filtred[i].name}</h3>`);
-  document.write(`<p><strong>City:</strong> ${Filtred[i].city}</p>`);
-  document.write(`<p><strong>Age:</strong> ${Filtred[i].age}</p>`);
-
-  document.write(`<div class="skills">`);
-
-  // nested loop
-  for (let x = 0; x < Filtred[i].skills.length; x++) {
-    document.write(`<span class="skill">${Filtred[i].skills[x]}</span>`);
-    // document.write(`<span class="skill">React</span>`);
-    // document.write(`<span class="skill">Node.js</span>`);
-  }
-  document.write(`</div>`);
-  document.write(`</div>`);
-
-  document.write(`</div>`);
-}
-document.write(`</div>`);
+console.log(names);
+// magaalooyinka
+let city = Users.map((User) => {
+  return `${User.city}`;
+});
+console.log(city);
+// da'da
+let ages = Users.map((User) => {
+  return `${User.age}`;
+});
+console.log(ages);
+// genders
+let gender = Users.map((User) => {
+  return `${User.gender}`;
+});
+console.log(gender);
+// Eamails
+let email = Users.map((User) => {
+  return `${User.email}`;
+});
+console.log(email);
