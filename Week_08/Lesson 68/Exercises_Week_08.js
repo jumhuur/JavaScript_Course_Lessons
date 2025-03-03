@@ -1,3 +1,29 @@
+// ### Exercise 29
+// Samee function Loop-garaynaya Arraygan Numbers-ka ah kadib
+// soo daabacay lanbarada oo liis garaysan
+// = Haku Xisaabtamo variable-ka Skipcount oo Lanbarka lagu Qoro Variabl-kaas haka boodo
+// = Tusaale Hadii SkipCount ay tahay 2 Haka booda marka loop-ka la samayno 2 lanabar
+// sidan oo kalena ha noqdo
+// - 1
+// Halkan waxaa laga booday laba lanbar oo ah 2 & 3
+// - 4
+// Halkan waxaa laga booday laba lanbar oo ah 5 & 6
+// - 7
+console.log("------Exercise 29-----------");
+let SkipCount = 3;
+const Mynumbers = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+];
+function loopNumbers() {
+  i = 0;
+  for (; i < Mynumbers.length; i++) {
+    console.log(Mynumbers[i]);
+    i = i + SkipCount;
+  }
+  return Mynumbers;
+}
+loopNumbers();
+
 //Exercise 30
 /*
 Samaee function Prams ahaan u qaadanaya 3 shay oo kala ah 

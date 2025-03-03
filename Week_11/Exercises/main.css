@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  ---dark1: #121212;
+  ---dark2: #2e2e2e;
+  ---light1: #6366f1;
+  ---light2: #1e1e1e;
+  ---colorMain: #6366f1;
+  ---cadaan: #fff;
+}
+
+body.dark {
+  background-color: var(---dark1);
+}
+body.light {
+  background-color: #fff;
+}
+
+div.containar {
+  width: 100%;
+  height: 100%;
+  background-color: var(---dark1);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 10px;
+}
+
+div.containar.light {
+  background-color: #fff;
+}
+
+div.box {
+  background-color: var(---dark2);
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 55px 2fr, 40px;
+  gap: 10px;
+  padding: 10px;
+  /* box-shadow: 0px 0px 5px 0px #6366f15e; */
+}
+
+div.box div.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(---colorMain);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+div.box h2 {
+  color: var(---colorMain);
+  margin: 10px 0px;
+}
+div.light h2 {
+  color: #fff;
+}
+
+div.box p {
+  color: #fff;
+  margin: 10px 0px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+div.box button {
+  width: 50%;
+  height: 40px;
+  outline: none;
+  background-color: var(---colorMain);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+div.light div.box {
+  background-color: var(---light1);
+}
+
+div.light div.icon {
+  background-color: #fff;
+  color: var(---dark1);
+}
+
+div.light button {
+  background-color: #fff;
+  color: var(---light1);
+}
+
+div.mode_switcher {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  margin: 20px 0px;
+}
+
+button#Switch {
+  width: 140px;
+  height: 35px;
+  border: none;
+  outline: none;
+  background-color: var(---light1);
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button#Switch.dark {
+  background-color: var(---dark2);
+  color: #fff;
+}
