@@ -4,3 +4,8 @@
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
+
+.highlight {
+  background-color: yellow;
+  padding: 10px;
+}
