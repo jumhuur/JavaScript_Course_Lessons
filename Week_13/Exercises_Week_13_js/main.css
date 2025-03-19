@@ -16,42 +16,46 @@
 }
 
 body {
-  background-color: var(---dark1);
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: wrap column; */
-  color: #fff;
-}
-/* 
-form {
-  width: 150px;
-  height: 100px;
-  margin-top: 20%;
-  background-color: var(---colorMain);
+  height: 100vh;
+  background-color: var(---dark2);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: wrap column;
+}
+
+form {
+  width: 200px;
+  height: 230px;
+  background-color: var(---dark1);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: wrap row;
   border-radius: 2px;
+  padding: 10px 10px;
 }
 
 div.maininputs {
-  width: 90%;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: flex-start;
   align-content: center;
-  margin-top: 10px;
 }
 
 h3 {
   font-size: 0.7rem;
-  color: #fff;
+  color: var(---light1);
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 input {
-  width: 30px;
+  background-color: var(---dark1);
+  color: var(---light1);
+  font-size: 0.6em;
+  width: 100%;
   height: 30px;
   outline: none;
   border: none;
@@ -59,7 +63,26 @@ input {
   padding-left: 10px;
   padding-right: 10px;
   text-transform: capitalize;
+  margin: 5px 0px;
+  border: solid 0.5px #6366f1;
+  border-radius: 3px;
 }
+
+input.Error {
+  border: solid 0.5px var(---casaan);
+}
+
+p {
+  color: var(---casaan);
+  font-size: 0.6em;
+  text-align: center;
+  visibility: hidden;
+}
+
+p.active {
+  visibility: visible;
+}
+
 button {
   width: 100%;
   background-color: var(---colorMain);
@@ -69,8 +92,8 @@ button {
   height: 35px;
   margin: 10px 0px;
   cursor: pointer;
-} */
-/* 
+}
+
 .faq-container {
   max-width: 800px;
   background: white;
@@ -113,34 +136,4 @@ button {
 }
 .faq-item.active .icon {
   transform: rotate(180deg);
-} */
-
-ul {
-  padding: 0px;
-  margin: 5px 10px;
-}
-
-li {
-  list-style: none;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-li span {
-  display: none;
-}
-
-li.active {
-  background-color: #6366f1;
-  color: #fff;
-}
-
-li.active span {
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  background-color: #e600d6;
-  color: #fff;
-  border-radius: 50%;
 }
