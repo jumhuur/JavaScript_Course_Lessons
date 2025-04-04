@@ -6,13 +6,15 @@ inputes.forEach((input, index) => {
   let Possition = 0;
   input.addEventListener("input", () => {
     if (input.value.length === 1) {
+      input.classList.add("add");
       input.blur();
       Possition = index;
-      Possition <= 3 && inputes[Possition + 1].focus();
+      Possition < 3 && inputes[Possition + 1].focus();
     } else if (input.value.length === 0) {
+      input.classList.remove("add");
       input.blur();
       Possition = index;
-      Possition >= 0 && inputes[Possition - 1].focus();
+      Possition > 0 && inputes[Possition - 1].focus();
     }
   });
 });

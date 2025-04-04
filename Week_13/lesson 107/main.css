@@ -23,15 +23,15 @@ body {
 }
 
 form {
-  width: 150px;
-  height: 100px;
-  margin-top: 20%;
+  width: 350px;
+  height: 300px;
   background-color: var(---colorMain);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: wrap column;
   border-radius: 2px;
+  margin: 15%;
 }
 
 div.maininputs {
@@ -40,21 +40,32 @@ div.maininputs {
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   align-content: center;
-  margin-top: 10px;
 }
 
 h3 {
-  font-size: 0.7rem;
+  font-size: 2.2rem;
   color: #fff;
+  margin-bottom: 15px;
 }
 
 input {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   outline: none;
   border: none;
-  border-radius: 2px;
-  padding-left: 10px;
-  padding-right: 10px;
+  border-radius: 6px;
+  padding-left: 20px;
+  padding-right: 20px;
   text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+input:focus {
+  background-color: #37ff00c8;
+  color: #fff;
+}
+
+input.add {
+  background-color: #37ff00c8;
+  color: #fff;
 }
