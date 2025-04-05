@@ -16,12 +16,25 @@
 }
 
 body {
-  background-color: var(---dark1);
   /* display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: wrap column; */
   color: #fff;
+  height: 7000px;
+  width: 1000px;
+}
+
+div.main_div {
+  width: 500px;
+  height: 400px;
+  background-color: red;
+  overflow-y: scroll;
+}
+
+div.child {
+  width: 100%;
+  height: 700px;
 }
 /* 
 form {
