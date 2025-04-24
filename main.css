@@ -1,231 +1,248 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+@font-face {
+  font-family: inter;
+  src: url("/Fonts/Inter_28pt-Regular.ttf");
 }
-
 :root {
-  ---dark1: #121212;
-  ---dark2: #2e2e2e;
-  ---light1: #6366f1;
-  ---light2: #1e1e1e;
-  ---colorMain: #6366f1;
-  ---cadaan: #fff;
-  ---casaan: #fb3f3f;
-  /* scroll-behavior: smooth; */
+  ---dark: #191919;
+  ---gray100: #f2f2f2;
+  ---gray200: #d9d9d9;
+  ---gray300: #808080;
+  ---gray400: #333333;
+  ---gray500: #262626;
+  ---gray600: #1a1a1a;
+  ---gray700: #0d0d0d;
+  ---purple: #8284fa;
+  ---PurpleDark: #5e60ce;
+  ---Blue: #4ea8de;
+  ---BlueDark: #1e6f9f;
+  ---Danger: #e25858;
 }
 
-body {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: wrap column; */
-  color: #fff;
-  background-color: var(---light2);
-  width: 100%;
-  height: 1400px;
-  position: relative;
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  transition: color 0.5s ease-in-out;
 }
 
-div.home {
-  width: 100%;
-  height: 500px;
-  background-color: var(---colorMain);
-  margin: 10px 0px;
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-div.serv {
-  width: 100%;
-  height: 500px;
-  background-color: var(---casaan);
-}
-div.nav {
-  width: 100%;
-  height: 500px;
-  background-color: var(---cadaan);
+body.dark {
+  background-color: var(---dark);
 }
 
-div.totop {
-  width: 40px;
-  height: 40px;
-  background-color: #e600d6;
-  border-radius: 2px;
-  position: fixed;
-  bottom: 150px;
-  right: 20px;
-  cursor: pointer;
-  visibility: hidden;
-  transform: translate(10px, 10px);
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-  z-index: 10;
+/* main head */
+div.main_head.dark {
+  width: 100%;
+  height: 200px;
+  background-color: var(---gray700);
+}
+
+div.main_head {
+  background-color: var(---gray100);
+}
+
+div.main_head div.head {
+  width: 100%;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: wrap column;
 }
 
-div.totop.active {
-  visibility: visible;
-  transform: translate(10px, 10px);
-  opacity: 1;
-  transition: all 0.5s ease-in-out;
-}
-
-div.main_div {
-  width: 500px;
-  height: 400px;
-  background-color: red;
-  overflow-y: scroll;
-}
-
-div.child {
-  width: 100%;
-  height: 700px;
-}
-
-div.btns {
-  position: fixed;
-}
-/* 
-form {
-  width: 150px;
+div.main_head div.head div.logo {
+  width: 130px;
   height: 100px;
-  margin-top: 20%;
-  background-color: var(---colorMain);
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: wrap column;
-  border-radius: 2px;
+}
+div.main_head div.head div.logo img {
+  width: 120px;
+  height: 45px;
 }
 
-div.maininputs {
-  width: 90%;
+/* main input */
+div.input_main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.input_main form {
+  width: 50%;
+  height: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  align-content: center;
+  grid-template-columns: 2fr 100px;
+  grid-template-rows: repeat(1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+div.input_main form input.dark {
+  background-color: var(---gray500);
+  border: solid 1.7px var(---gray500);
+}
+
+div.input_main form input {
+  background-color: var(---gray100);
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: var(---gray300);
+  padding-left: 15px;
+  padding-right: 15px;
+  accent-color: var(---gray200);
+  font-size: 16px;
+  border: solid 1.7px var(---gray100);
+  transition: all 0.1s ease-in;
+}
+
+div.input_main form button.dark {
+  background-color: var(---BlueDark);
+}
+
+div.input_main form button {
+  background-color: var(---purple);
+  color: var(---gray100);
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+div.input_main form button:hover {
+  background-color: var(---PurpleDark);
+}
+
+div.input_main form input:focus {
+  border: solid 1.7px var(---purple);
+}
+/* list */
+div.Todo_lists {
+  width: 100%;
+  height: 100%;
+}
+
+div.Todo_lists div.main_lists {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  padding-bottom: 40px;
+}
+
+div.Todo_lists div.main_lists div.lists {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.Todo_lists div.main_lists div.lists div.list.dark {
+  background-color: var(---gray400);
+}
+
+div.Todo_lists div.main_lists div.lists div.list {
+  min-height: 60px;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: var(---gray100);
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  grid-template-rows: 1fr;
+  gap: 5px;
+  border-radius: 5px;
   margin-top: 10px;
 }
 
-h3 {
-  font-size: 0.7rem;
-  color: #fff;
-}
-
-input {
-  width: 30px;
-  height: 30px;
-  outline: none;
-  border: none;
-  border-radius: 2px;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-transform: capitalize;
-}
-button {
-  width: 100%;
-  background-color: var(---colorMain);
-  color: #fff;
-  outline: none;
-  border: none;
-  height: 35px;
-  margin: 10px 0px;
-  cursor: pointer;
-} */
-/* 
-.faq-container {
-  max-width: 800px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.faq-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #6366f1;
-}
-.faq-item {
-  border-bottom: 1px solid #6366f1;
-  padding: 15px 0;
-  cursor: pointer;
-}
-.faq-question {
+div.Todo_lists div.main_lists div.lists div.list div.icon {
   display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-}
-.faq-answer {
-  width: 300px;
-  display: none;
-  padding-top: 10px;
-  color: #666;
-}
-.icon {
-  transition: transform 0.3s ease;
-}
-
-.icon img {
-  width: 10px;
-  height: 10px;
-  color: #6366f1;
-}
-.faq-item.active .faq-answer {
-  display: block;
-}
-.faq-item.active .icon {
-  transform: rotate(180deg);
-} */
-
-ul {
-  padding: 0px;
-  margin: 5px 10px;
-}
-
-li {
-  list-style: none;
-  padding: 5px;
-  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  color: var(---Blue);
   cursor: pointer;
 }
 
-li span {
-  display: none;
+div.Todo_lists div.main_lists div.lists div.list div.icon i {
+  font-size: 18px;
 }
 
-li.active {
-  background-color: #6366f1;
-  color: #fff;
+i.bxs-check-circle {
+  color: var(---PurpleDark);
 }
 
-li.active span {
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  background-color: #e600d6;
-  color: #fff;
-  border-radius: 50%;
-}
-
-button.close {
-  width: 100px;
-  height: 50px;
-  background-color: #6366f1;
-  color: #fff;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 15px;
-  outline: none;
-  border-radius: 5px;
-  transition: all 0.5s ease-in;
-  border: none;
-  margin: 100px 50px;
+div.Todo_lists div.main_lists div.lists div.list div.text {
   cursor: pointer;
 }
+div.Todo_lists div.main_lists div.lists div.list div.text p.dark {
+  color: var(---gray100);
+}
+div.Todo_lists div.main_lists div.lists div.list div.text p {
+  font-family: inter;
+  font-size: 17px;
+  color: var(---gray700);
+  line-height: 1.6;
+  text-decoration: line-through;
+}
 
-button.close:hover {
-  background-color: #fb3f3f;
-  transition: all 0.5s ease-in;
+div.Todo_lists div.main_lists div.lists div.list div.text p.complate {
+}
+
+div.Todo_lists div.main_lists div.lists div.list div.action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  color: var(---gray300) !important;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+div.Todo_lists div.main_lists div.lists div.list div.action i:hover {
+  color: var(---Danger);
+}
+
+div.empty_todo {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.empty_todo h2 {
+  font-family: inter;
+  font-size: 20px;
+  text-transform: capitalize;
+  color: var(---gray300);
+  margin: 15px 0px;
+}
+
+div.empty_todo p {
+  font-family: inter;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: var(---gray300);
 }
