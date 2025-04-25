@@ -72,6 +72,14 @@ div.main_head div.head div.logo img {
   height: 45px;
 }
 
+div.main_head div.head div.statics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  gap: 4px;
+}
+
 div.main_head div.head div.mode {
   width: fit-content;
   /* display: grid;
@@ -140,7 +148,7 @@ div.input_main {
   flex-flow: wrap column;
 }
 
-div.input_main form {
+div.input_main section {
   width: 50%;
   height: 100%;
   display: grid;
@@ -150,18 +158,19 @@ div.input_main form {
   padding: 10px;
 }
 
-div.input_main form input.dark {
+div.input_main section input.dark {
   background-color: var(---gray500);
   border: solid 1.7px var(---gray500);
+  color: var(---gray100);
 }
 
-div.input_main form input {
+div.input_main section input {
   background-color: var(---gray100);
   height: 45px;
   border: none;
   border-radius: 5px;
   outline: none;
-  color: var(---gray300);
+  color: var(---gray700);
   padding-left: 15px;
   padding-right: 15px;
   accent-color: var(---gray200);
@@ -170,11 +179,11 @@ div.input_main form input {
   transition: all 0.1s ease-in;
 }
 
-div.input_main form button.dark {
+div.input_main section button.dark {
   background-color: var(---BlueDark);
 }
 
-div.input_main form button {
+div.input_main section button {
   background-color: var(---purple);
   color: var(---gray100);
   font-size: 16px;
@@ -185,11 +194,11 @@ div.input_main form button {
   transition: all 0.3s ease;
 }
 
-div.input_main form button:hover {
+div.input_main section button:hover {
   background-color: var(---PurpleDark);
 }
 
-div.input_main form input:focus {
+div.input_main section input:focus {
   border: solid 1.7px var(---purple);
 }
 /* list */
@@ -216,7 +225,7 @@ div.Todo_lists div.main_lists div.lists {
   flex-flow: wrap column;
 }
 
-div.Todo_lists div.main_lists div.lists div.list.dark {
+div.Todo_lists div.main_lists div.lists.dark > div.list {
   background-color: var(---gray400);
 }
 
@@ -253,7 +262,7 @@ i.bxs-check-circle {
 div.Todo_lists div.main_lists div.lists div.list div.text {
   cursor: pointer;
 }
-div.Todo_lists div.main_lists div.lists div.list div.text p.dark {
+div.Todo_lists div.main_lists div.lists.dark div.list div.text p {
   color: var(---gray100);
 }
 div.Todo_lists div.main_lists div.lists div.list div.text p {
@@ -261,6 +270,7 @@ div.Todo_lists div.main_lists div.lists div.list div.text p {
   font-size: 17px;
   color: var(---gray700);
   line-height: 1.6;
+  user-select: none;
   /* text-decoration: line-through; */
 }
 
