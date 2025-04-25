@@ -72,6 +72,64 @@ div.main_head div.head div.logo img {
   height: 45px;
 }
 
+div.main_head div.head div.mode {
+  width: fit-content;
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: wrap row;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+div.main_head div.head div.mode p {
+  color: var(---PurpleDark);
+  font-family: inter;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+div.main_head div.head div.mode > i {
+  color: var(---Blue);
+}
+
+div.main_head div.head div.mode div.list_mode {
+  position: absolute;
+  padding: 5px;
+  top: 30px;
+  right: 0px;
+  visibility: hidden;
+  transition: all 0.2s ease-in;
+}
+
+div.main_head div.head div.mode div.list_mode.active {
+  visibility: visible;
+}
+
+div.main_head div.head div.mode div.list_mode ul.drop_mode {
+  list-style: none;
+  padding: 10px;
+  background-color: var(---gray200);
+  border-radius: 4px;
+}
+
+div.main_head div.head div.mode div.list_mode ul.drop_mode li {
+  /* background-color: var(---purple); */
+  padding: 5px;
+  margin: 4px;
+  cursor: pointer;
+  color: var(---PurpleDark);
+}
+
+div.main_head div.head div.mode div.list_mode ul.drop_mode li:hover {
+  color: var(---Blue);
+  background-color: var(---gray200);
+}
+
 /* main input */
 div.input_main {
   width: 100%;
@@ -203,7 +261,7 @@ div.Todo_lists div.main_lists div.lists div.list div.text p {
   font-size: 17px;
   color: var(---gray700);
   line-height: 1.6;
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
 }
 
 div.Todo_lists div.main_lists div.lists div.list div.text p.complate {
