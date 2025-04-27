@@ -1,0 +1,316 @@
+@font-face {
+  font-family: inter;
+  src: url("/Fonts/Inter_28pt-Regular.ttf");
+}
+:root {
+  ---dark: #191919;
+  ---gray100: #f2f2f2;
+  ---gray200: #d9d9d9;
+  ---gray300: #808080;
+  ---gray400: #333333;
+  ---gray500: #262626;
+  ---gray600: #1a1a1a;
+  ---gray700: #0d0d0d;
+  ---purple: #8284fa;
+  ---PurpleDark: #5e60ce;
+  ---Blue: #4ea8de;
+  ---BlueDark: #1e6f9f;
+  ---Danger: #e25858;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  transition: color 0.5s ease-in-out;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+body.dark {
+  background-color: var(---dark);
+}
+
+/* main head */
+div.main_head.dark {
+  width: 100%;
+  height: 200px;
+  background-color: var(---gray700);
+}
+
+div.main_head {
+  background-color: var(---gray100);
+}
+
+div.main_head div.head {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.main_head div.head div.logo {
+  width: 130px;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+div.main_head div.head div.logo img {
+  width: 120px;
+  height: 45px;
+}
+
+div.main_head div.head div.statics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+  gap: 4px;
+}
+
+div.main_head div.head div.mode {
+  width: fit-content;
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: wrap row;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+div.main_head div.head div.mode p {
+  color: var(---PurpleDark);
+  font-family: inter;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+div.main_head div.head div.mode > i {
+  color: var(---Blue);
+}
+
+div.main_head div.head div.mode div.list_mode {
+  position: absolute;
+  padding: 5px;
+  top: 30px;
+  right: 0px;
+  visibility: hidden;
+  transition: all 0.2s ease-in;
+}
+
+div.main_head div.head div.mode div.list_mode.active {
+  visibility: visible;
+}
+
+div.main_head div.head div.mode div.list_mode ul.drop_mode {
+  list-style: none;
+  padding: 10px;
+  background-color: var(---gray200);
+  border-radius: 4px;
+}
+
+div.main_head div.head div.mode div.list_mode ul.drop_mode li {
+  /* background-color: var(---purple); */
+  padding: 5px;
+  margin: 4px;
+  cursor: pointer;
+  color: var(---PurpleDark);
+}
+
+div.main_head div.head div.mode div.list_mode ul.drop_mode li:hover {
+  color: var(---Blue);
+  background-color: var(---gray200);
+}
+
+/* main input */
+div.input_main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.input_main section {
+  width: 50%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 2fr 100px;
+  grid-template-rows: repeat(1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+div.input_main section input.dark {
+  background-color: var(---gray500);
+  border: solid 1.7px var(---gray500);
+  color: var(---gray100);
+}
+
+div.input_main section input {
+  background-color: var(---gray100);
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: var(---gray700);
+  padding-left: 15px;
+  padding-right: 15px;
+  accent-color: var(---gray200);
+  font-size: 16px;
+  border: solid 1.7px var(---gray100);
+  transition: all 0.1s ease-in;
+}
+
+div.input_main section button.dark {
+  background-color: var(---BlueDark);
+}
+
+div.input_main section button {
+  background-color: var(---purple);
+  color: var(---gray100);
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+div.input_main section button:hover {
+  background-color: var(---PurpleDark);
+}
+
+div.input_main section input:focus {
+  border: solid 1.7px var(---purple);
+}
+/* list */
+div.Todo_lists {
+  width: 100%;
+  height: 100%;
+}
+
+div.Todo_lists div.main_lists {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  padding-bottom: 40px;
+}
+
+div.Todo_lists div.main_lists div.lists {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.Todo_lists div.main_lists div.lists.dark > div.list {
+  background-color: var(---gray400);
+}
+
+div.Todo_lists div.main_lists div.lists div.list {
+  min-height: 60px;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: var(---gray100);
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  grid-template-rows: 1fr;
+  gap: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+div.Todo_lists div.main_lists div.lists div.list div.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  color: var(---Blue);
+  cursor: pointer;
+}
+
+div.Todo_lists div.main_lists div.lists div.list div.icon i {
+  font-size: 18px;
+}
+
+i.bxs-check-circle {
+  color: var(---PurpleDark);
+}
+
+div.Todo_lists div.main_lists div.lists div.list div.text {
+  cursor: pointer;
+}
+div.Todo_lists div.main_lists div.lists.dark div.list div.text p {
+  color: var(---gray100);
+}
+div.Todo_lists div.main_lists div.lists div.list div.text p {
+  font-family: inter;
+  font-size: 17px;
+  color: var(---gray700);
+  line-height: 1.6;
+  user-select: none;
+  /* text-decoration: line-through; */
+}
+
+div.Todo_lists div.main_lists div.lists div.list div.text p.complate {
+}
+
+div.Todo_lists div.main_lists div.lists div.list div.action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  color: var(---gray300) !important;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+div.Todo_lists div.main_lists div.lists div.list div.action i:hover {
+  color: var(---Danger);
+}
+
+div.empty_todo {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
+div.empty_todo h2 {
+  font-family: inter;
+  font-size: 20px;
+  text-transform: capitalize;
+  color: var(---gray300);
+  margin: 15px 0px;
+}
+
+div.empty_todo p {
+  font-family: inter;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: var(---gray300);
+}

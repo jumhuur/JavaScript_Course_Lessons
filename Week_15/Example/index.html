@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript - BOM</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <!-- head -->
+    <div class="main_head">
+      <div class="container">
+        <div class="head">
+          <div class="logo">
+            <img src="/Images/Logo.png" alt="logo" />
+          </div>
+          <div class="statics">
+            <div class="mode">
+              <p>Mode <i class="bx bx-chevron-down"></i></p>
+              <p id="mode_icon"></p>
+              <div class="list_mode">
+                <ul class="drop_mode">
+                  <li mode="dark" title="dark mode">
+                    <i class="bx bxs-moon"></i>
+                  </li>
+                  <li title="light mode">
+                    <i class="bx bxs-sun"></i>
+                  </li>
+                  <li title="system mode">
+                    <i class="bx bx-desktop"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="mode complate">
+              <p>Mode <i class="bx bx-chevron-down"></i></p>
+            </div>
+            <div class="mode uncomplate">
+              <p>Mode <i class="bx bx-chevron-down"></i></p>
+            </div>
+          </div>
+        </div>
+        <div class="mode"></div>
+      </div>
+    </div>
+
+    <!-- input_and_action_btn -->
+    <div class="input_container">
+      <div class="container">
+        <div class="input_main">
+          <section>
+            <input
+              type="text"
+              placeholder="Type Here ..."
+              maxlength="150"
+              required
+            />
+
+            <button type="submit">Add <i class="bx bx-plus-circle"></i></button>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- todo lists -->
+    <div class="Todo_lists">
+      <div class="container">
+        <div class="main_lists">
+          <div class="lists dark"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <i class="bx bx-check-circle"></i> -->
+    <script src="/Main.js"></script>
+  </body>
+</html>
