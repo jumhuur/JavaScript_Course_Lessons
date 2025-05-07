@@ -1,95 +1,51 @@
-// const color = document.querySelector("input#color");
-// const Body = document.querySelector("body");
-// const ul = document.querySelector("ul");
-// const h2 = document.querySelector("h2");
-// const btn = document.querySelector("button");
-// // get colors from localstrg
-// const LastColor = localStorage.getItem("color");
-// const Fullcolors = localStorage.getItem("Allcolors");
-// let colorHistroy = JSON.parse(Fullcolors) || [];
-// // function getContrastColor(hexColor) {
-// //   const color = hexColor.replace("#", "");
-// //   const r = parseInt(color.slice(0, 2), 16);
-// //   const g = parseInt(color.slice(2, 4), 16);
-// //   const b = parseInt(color.slice(4, 6), 16);
-// //   // formula: brightness
-// //   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-// //   // return white or black depending on brightness
-// //   return brightness > 128 ? "#000000" : "#FFFFFF";
-// // }
-// const Setcolors = () => {
-//   Body.style.backgroundColor = `${LastColor}`;
-//   color.value = LastColor;
-//   colorHistroy.forEach((color, index) => {
-//     const li = document.createElement("li");
-//     li.textContent = `${index + 1} : ${color}`;
-//     ul.appendChild(li);
-//     li.style.backgroundColor = color;
-//     li.style.color = "#fff";
-//   });
-// };
+// date and time
+const datenow = Date.now();
+const DateNow = new Date();
+console.log(datenow);
+console.log(DateNow);
 
-// // changing
-// color.addEventListener("input", () => {
-//   h2.style.color = colorHistroy[2];
-//   Body.style.backgroundColor = `${color.value}`;
-//   colorHistroy.push(color.value);
-//   localStorage.setItem("color", color.value);
-//   localStorage.setItem("Allcolors", JSON.stringify(colorHistroy));
-//   const li = document.createElement("li");
-//   colorHistroy.forEach((color, index) => {
-//     li.textContent = `${index + 1} : ${color}`;
-//     ul.appendChild(li);
-//     li.style.backgroundColor = color;
-//     li.style.color = "#fff";
-//   });
-// });
-// btn.addEventListener("click", () => {
-//   localStorage.clear();
-//   ul.innerHTML = "";
-//   color.value = "";
-//   Body.style.backgroundColor = "#fff";
-// });
-// Setcolors();
+// gettime
+console.log(DateNow.getTime());
 
-// console.log("2e014b".substr(0, 2));
-// console.log("2e014b".substr(2, 2));
-// console.log("2e014b".substr(4, 6));
-// console.log("*".repeat(10));
-// console.log("2e014b".slice(0, 2));
-// console.log("2e014b".slice(2, 4));
-// console.log("2e014b".slice(4, 6));
-// console.log("2e014b");
-// console.log(parseInt("2e014b".slice(0, 2), 16));
-// console.log(parseInt("2e014b".slice(2, 4), 16));
-// console.log(parseInt("2e014b".slice(4, 7), 16));
+console.log(DateNow.getFullYear());
+// bisha
+console.log("bisha", DateNow.getMonth());
+// maalinta bisha aan kaga jirno
+console.log(DateNow.getDay());
 
-const sound = document.querySelector("audio");
-const Playbtn = document.querySelector("button");
-const Pausebtn = document.querySelector("button.stop");
-Playbtn.addEventListener("click", () => {
-  setTimeout(() => {
-    sound.play();
-    console.log("done");
-  }, 300);
-});
+// maalinka aan week-ga kaga jirno
+console.log(DateNow.getDate());
 
-Pausebtn.addEventListener("click", () => {
-  setTimeout(() => {
-    sound.pause();
-    console.log("done");
-  }, 300);
-});
+// saacada
+console.log(DateNow.getHours());
+// daqiiqad
+console.log(DateNow.getMinutes());
+// sikino
+console.log(DateNow.getSeconds());
+// milisinikin
+console.log(DateNow.getMilliseconds());
 
-// properties
-console.log(sound.audioTracks);
-console.log(sound.currentTime);
-console.log(sound.duration);
-console.log(sound.playbackRate);
-console.log(sound.volume);
-console.log(sound.src);
+// Waqtiga ugu dambeeya (target time)
+const targetDate = new Date("2025-05-17T23:59:59").getTime();
 
-sound.addEventListener("timeupdate", (e) => {
-  console.log("wakhtiga Muuqalka :", e.target.duration);
-  console.log("wakhtiga uu marayo", e.target.currentTime);
-});
+// Cusboonaysii kasta 1 ilbiriqsi
+const timer = setInterval(() => {
+  const now = new Date().getTime();
+  const difference = targetDate - now;
+
+  // Xisaabi maalmaha, saacadaha, daqiiqadaha iyo ilbiriqsiyada
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+  console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+
+  // Haddii wakhtigu dhamaado
+  if (difference < 0) {
+    clearInterval(timer);
+    console.log("Waqtigu wuu dhammaaday!");
+  }
+}, 1000);
