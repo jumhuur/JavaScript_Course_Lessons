@@ -49,3 +49,5 @@ const timer = setInterval(() => {
     console.log("Waqtigu wuu dhammaaday!");
   }
 }, 1000);
+
+console.log("waa maxay waxa dhacayaa");
