@@ -1,53 +1,119 @@
-// date and time
-const datenow = Date.now();
-const DateNow = new Date();
-console.log(datenow);
-console.log(DateNow);
+// testing
 
-// gettime
-console.log(DateNow.getTime());
+// Tusaale 1aad Array
+const array_data = ["jimcaale", "muuse", "wahiib"];
+const displaydata = (Data) => {
+  let [name1, name2, name3] = Data;
+  console.log(`welcome ${name1} and ${name2} and ${name3}`);
+};
 
-console.log(DateNow.getFullYear());
-// bisha
-console.log("bisha", DateNow.getMonth());
-// maalinta bisha aan kaga jirno
-console.log(DateNow.getDay());
+displaydata(array_data); // welcome jimcaale and muuse and wahiib
 
-// maalinka aan week-ga kaga jirno
-console.log(DateNow.getDate());
+// Tusaale 2 object
+const Object_data = { name: "jimcaale", age: "23", job: "web dev" };
+const Userdata = (Data) => {
+  let { name, age, job } = Data;
+  return `Welcome ${name} , Your Job is ${job} and Your age is ${age}`;
+};
 
-// saacada
-console.log(DateNow.getHours());
-// daqiiqad
-console.log(DateNow.getMinutes());
-// sikino
-console.log(DateNow.getSeconds());
-// milisinikin
-console.log(DateNow.getMilliseconds());
+console.log(Userdata(Object_data)); // Welcome jimcaale , Your Job is web dev and Your age is 23
 
-// Waqtiga ugu dambeeya (target time)
-const targetDate = new Date("2025-05-17T23:59:59").getTime();
+// spread
+const qoraal = "Taysiir";
+console.log(qoraal);
+console.log(...qoraal);
+console.log([...qoraal]);
 
-// Cusboonaysii kasta 1 ilbiriqsi
-const timer = setInterval(() => {
-  const now = new Date().getTime();
-  const difference = targetDate - now;
+const fruits1 = ["tufaax", "moos"];
+const fruits2 = ["canab", "liin"];
 
-  // Xisaabi maalmaha, saacadaha, daqiiqadaha iyo ilbiriqsiyada
-  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+const allFruits = [...fruits1, ...fruits2];
+console.log(allFruits); // ['tufaax', 'moos', 'canab', 'liin']
 
-  console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+const original = [1, 2, 3];
+const copy = [...original];
+console.log(copy); // [1, 2, 3]
 
-  // Haddii wakhtigu dhamaado
-  if (difference < 0) {
-    clearInterval(timer);
-    console.log("Waqtigu wuu dhammaaday!");
+const numbers = [3, 5, 7];
+console.log(Math.min(...numbers)); // 7
+
+const students = [
+  {
+    name: "Ahmed Ali",
+    age: 20,
+    studentId: "ST001",
+    grade: "Grade 12",
+  },
+  {
+    name: "Zahra Hassan",
+    age: 19,
+    studentId: "ST002",
+    grade: "Grade 11",
+  },
+  {
+    name: "Khalid Mohamed",
+    age: 21,
+    studentId: "ST003",
+    grade: "Grade 12",
+  },
+  {
+    name: "Ayaan Yusuf",
+    age: 18,
+    studentId: "ST004",
+    grade: "Grade 10",
+  },
+  {
+    name: "Fatima Abdullahi",
+    age: 22,
+    studentId: "ST005",
+    grade: "Grade 13",
+  },
+];
+
+function* gendata(list) {
+  for (let strudent of list) {
+    yield strudent;
   }
-}, 1000);
+}
 
-console.log("waa maxay waxa dhacayaa");
+let gennum = gendata(students);
+console.log(gennum.next());
+console.log(gennum.next());
+console.log(gennum.next());
+console.log(gennum.next());
+console.log(gennum.next());
+
+// const pro = new Promise((res, rej) => {
+//   const data = fetch("https://api.github.com/users/jumhuur");
+//   console.log(data);
+//   const jsondata = data.json;
+//   res(data);
+// }).then((result) => {
+//   console.log(result);
+// });
+const getdata = async (name) => {
+  const data = await fetch(`https://api.github.com/users/${name}/repos`);
+  const jsodata = await data.json();
+  console.log(`Repos-kaaga dhamaan waa ${jsodata.length}`);
+  console.log(jsodata);
+  for (repo of jsodata) {
+    //console.log(repo);
+    const {
+      name,
+      default_branch,
+      forks,
+      open_issues_count,
+      id,
+      collaborators_url,
+      owner: { login },
+    } = repo;
+    console.log("--- repo name", name);
+    console.log("--branch", default_branch);
+    console.log("- issues", open_issues_count);
+    console.log("- forks", forks);
+    console.log("--- repo Id", id);
+    console.log("- owner", login);
+  }
+};
+
+getdata("microsoft");
