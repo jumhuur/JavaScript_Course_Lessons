@@ -1,8 +1,12 @@
 // Main.js
-import taysiir, { add as iskugayn, iskuqaybin as Qaybin } from "./functions.js";
+import {
+  getdata as githubdata,
+  add as iskugayn,
+  iskuqaybin as Qaybin,
+} from "./functions.js";
 console.log(iskugayn(20, 30));
 console.log(Qaybin(50, 20));
-console.log(taysiir(20, 10));
+//console.log(taysiir(20, 10));
 // Tusaale 1aad Array
 const array_data = ["jimcaale", "muuse", "wahiib"];
 const displaydata = (Data) => {
@@ -86,40 +90,7 @@ console.log(gennum.next());
 console.log(gennum.next());
 console.log(gennum.next());
 
-// const pro = new Promise((res, rej) => {
-//   const data = fetch("https://api.github.com/users/jumhuur");
-//   console.log(data);
-//   const jsondata = data.json;
-//   res(data);
-// }).then((result) => {
-//   console.log(result);
-// });
-// const getdata = async (name) => {
-//   const data = await fetch(`https://api.github.com/users/${name}/repos`);
-//   const jsodata = await data.json();
-//   console.log(`Repos-kaaga dhamaan waa ${jsodata.length}`);
-//   console.log(jsodata);
-//   for (repo of jsodata) {
-//     //console.log(repo);
-//     const {
-//       name,
-//       default_branch,
-//       forks,
-//       open_issues_count,
-//       id,
-//       collaborators_url,
-//       owner: { login },
-//     } = repo;
-//     console.log("--- repo name", name);
-//     console.log("--branch", default_branch);
-//     console.log("- issues", open_issues_count);
-//     console.log("- forks", forks);
-//     console.log("--- repo Id", id);
-//     console.log("- owner", login);
-//   }
-// };
-
-// getdata("microsoft");
+githubdata("sharafdin");
 const list = [
   "saalim",
   "cali",
