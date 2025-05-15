@@ -11,7 +11,37 @@
     />
   </head>
   <body>
-    <h2>JavaScript Date and Time</h2>
-    <script src="/Main.js" type="module"></script>
+    <div class="audio-player">
+      <div class="player-header">
+        <h2>Audio Player</h2>
+      </div>
+      <div class="album-art">
+        <img class="album-art-image" src="" />
+      </div>
+      <div class="song-info">
+        <div class="song-title">Ocean Waves</div>
+        <div class="artist">Nature Sounds</div>
+      </div>
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+        <div class="time-info">
+          <span class="TimeNow">00:00</span>
+          <span class="Timeduration">00:00</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="volume-slider">
+          <span class="volume-icon">🔊</span>
+          <input type="range" id="volume" step="0.01" min="0" max="1" />
+        </div>
+        <button class="control-btn prev">⏪</button>
+        <button class="play-btn"><i class="bx bx-play"></i></button>
+        <button class="control-btn next">⏩</button>
+      </div>
+    </div>
+    <script src="/Main.js" />
   </body>
 </html>

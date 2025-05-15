@@ -1,320 +1,182 @@
-// Main.js
-import * as all from "/functions.js";
-console.log(all.add(20, 22));
-console.log(all.iskuqaybin(90, 3));
-//console.log(all.getdata("sharafdin"));
+// build
+const Cover = document.querySelector(".album-art-image");
+const AudioTitle = document.querySelector("div.song-title");
+const AudioArt = document.querySelector("div.artist");
+const progressbar = document.querySelector(".progress-bar");
+const progress = document.querySelector("div.progress");
+const TimeNow = document.querySelector("span.TimeNow");
+const Timeduration = document.querySelector("span.Timeduration");
+const volume = document.querySelector("input#volume");
+const prev = document.querySelector("button.prev");
+const next = document.querySelector("button.next");
+const Play = document.querySelector("button.play-btn");
+// kuwa cusub
+const audio = document.createElement("audio");
 
-// Tusaale 1aad Array
-const array_data = ["jimcaale", "muuse", "wahiib"];
-const displaydata = (Data) => {
-  let [name1, name2, name3] = Data;
-  console.log(`welcome ${name1} and ${name2} and ${name3}`);
-};
-
-displaydata(array_data); // welcome jimcaale and muuse and wahiib
-
-// Tusaale 2 object
-const Object_data = { name: "jimcaale", age: "23", job: "web dev" };
-const Userdata = (Data) => {
-  let { name, age, job } = Data;
-  return `Welcome ${name} , Your Job is ${job} and Your age is ${age}`;
-};
-
-console.log(Userdata(Object_data)); // Welcome jimcaale , Your Job is web dev and Your age is 23
-
-// spread
-const qoraal = "Taysiir";
-console.log(qoraal);
-console.log(...qoraal);
-console.log([...qoraal]);
-
-const fruits1 = ["tufaax", "moos"];
-const fruits2 = ["canab", "liin"];
-
-const allFruits = [...fruits1, ...fruits2];
-console.log(allFruits); // ['tufaax', 'moos', 'canab', 'liin']
-
-const original = [1, 2, 3];
-const copy = [...original];
-console.log(copy); // [1, 2, 3]
-
-const numbers = [3, 5, 7];
-console.log(Math.min(...numbers)); // 7
-
-const students = [
+const sounds = [
   {
-    name: "Ahmed Ali",
-    age: 20,
-    studentId: "ST001",
-    grade: "Grade 12",
+    src: "/sound/03.mp3",
+    Title: "Anta nuurulaah",
+    Cover: "/Images/malak03.jpg",
+    Art: "Malak Fathi",
   },
   {
-    name: "Zahra Hassan",
-    age: 19,
-    studentId: "ST002",
-    grade: "Grade 11",
+    src: "/sound/01.mp3",
+    Title: "Ramadan",
+    Cover: "/Images/malak01.jpg",
+    Art: "Malak Fathi and Fathuum",
+  },
+
+  {
+    src: "/sound/Sinn.mp3",
+    Title: "Siin",
+    Cover: "/Images/najaar.jpg",
+    Art: "Abdale najar",
+  },
+
+  {
+    src: "/sound/02.mp3",
+    Title: "Dikri",
+    Cover: "/Images/malak02.jpg",
+    Art: "Malak Fathi",
+  },
+
+  {
+    src: "/sound/arwax.mp3",
+    Title: "mushtaaq",
+    Cover: "/Images/kandari.jpg",
+    Art: "abdirahmaan kandari",
+  },
+
+  {
+    src: "/sound/04.mp3",
+    Title: "Muhamed",
+    Cover: "/Images/malak04.jpg",
+    Art: "Malak Fathi",
   },
   {
-    name: "Khalid Mohamed",
-    age: 21,
-    studentId: "ST003",
-    grade: "Grade 12",
+    src: "/sound/05.mp3",
+    Title: "mustafaa",
+    Cover: "/Images/malakfat.jpg",
+    Art: "Malak Fathi and Fathuum",
   },
   {
-    name: "Ayaan Yusuf",
-    age: 18,
-    studentId: "ST004",
-    grade: "Grade 10",
-  },
-  {
-    name: "Fatima Abdullahi",
-    age: 22,
-    studentId: "ST005",
-    grade: "Grade 13",
+    src: "/sound/06.m4a",
+    Title: "habibi ya rasuul",
+    Cover: "/Images/images.jpg",
+    Art: "salah manic yami",
   },
 ];
 
-function* gendata(list) {
-  for (let strudent of list) {
-    yield strudent;
-  }
-}
+// track
+let soundIndex = 0;
+let isplaying = false;
+let speed = 1;
 
-let gennum = gendata(students);
-console.log(gennum.next());
-console.log(gennum.next());
-console.log(gennum.next());
-console.log(gennum.next());
-console.log(gennum.next());
-const list = [
-  "saalim",
-  "cali",
-  "sucuud",
-  "ilahaan",
-  ["muuse", "nasri", ["yuusuf", "muwaahib"], "safwaan"],
-  "mukhtaar",
-];
+// functions
 
-console.log(list);
-
-// des
-let [, , , , [, , [, name]]] = list;
-let [, , , , nastedlist] = list;
-let [, , , , [, , arry3]] = list;
-let [, , , , , last] = list;
-console.log(name);
-console.log(nastedlist);
-console.log(arry3);
-console.log(last);
-
-const qof = {
-  magaca: "Axmed",
-  dada: 25,
-  cinwaan: {
-    magaalada: "Hargeysa",
-    dalka: "Somaliland",
-  },
+// load sound
+const Loadsound = (Sound) => {
+  audio.src = Sound.src;
+  Cover.src = Sound.Cover;
+  AudioTitle.textContent = Sound.Title;
+  AudioArt.textContent = Sound.Art;
 };
 
-let {
-  magaca,
-  cinwaan: { magaalada, dalka },
-} = qof;
+Loadsound(sounds[soundIndex]);
 
-console.log(magaca);
-console.log(magaalada);
-console.log(dalka);
+// play sound
+const Playsound = (audio) => {
+  if (isplaying === false) {
+    isplaying = true;
+    audio.play();
+    Play.innerHTML = `<i class="bx bx-pause"></i>`;
+  } else {
+    isplaying = false;
+    audio.pause();
+    Play.innerHTML = `<i class="bx bx-play"></i>`;
+  }
+};
 
-let StudentsData = [
-  {
-    magac: "Axmed Ali",
-    da: 21,
-    fasal: "IT",
-    guursaday: false,
-    xiisaha: ["coding", "football"],
-    luqadaha: ["Somali", "English"],
-    cinwaan: {
-      magaalo: "Hargeisa",
-      xaafad: "Ibrahim Koodbuur",
-    },
-  },
-  {
-    magac: "Zahra Omar",
-    da: 19,
-    fasal: "Medicine",
-    guursaday: false,
-    xiisaha: ["reading", "drawing", "swimming"],
-    luqadaha: ["Arabic", "English", "Somali"],
-    cinwaan: {
-      magaalo: "Mogadishu",
-      xaafad: "Hodan",
-    },
-    buuxisayKoorsada: true,
-  },
-  {
-    magac: "Khalid Yusuf",
-    da: 24,
-    fasal: "Engineering",
-    guursaday: true,
-    caruur: 2,
-    xiisaha: [],
-    luqadaha: ["English"],
-    cinwaan: {
-      magaalo: "Bosaso",
-      xaafad: "Roodhi",
-    },
-  },
-  {
-    magac: "Nasra Hassan",
-    da: 22,
-    fasal: "Computer Science",
-    guursaday: false,
-    xiisaha: ["gaming", "hiking"],
-    luqadaha: [],
-    cinwaan: {
-      magaalo: "Garowe",
-      xaafad: "Hantiwadaag",
-    },
-    buuxisayKoorsada: null,
-  },
-  {
-    magac: "Yusuf Mohamed",
-    da: 20,
-    fasal: "Business",
-    guursaday: false,
-    xiisaha: ["marketing", "networking"],
-    luqadaha: ["English", "French"],
-    cinwaan: {
-      magaalo: "Kismayo",
-      xaafad: "Shaqalaha",
-    },
-  },
-  {
-    magac: "Ayaan Abdi",
-    da: 18,
-    fasal: "Law",
-    guursaday: false,
-    xiisaha: ["debate", "writing"],
-    luqadaha: ["Somali"],
-    cinwaan: {
-      magaalo: "Baidoa",
-      xaafad: "Wadajir",
-    },
-  },
-  {
-    magac: "Hamza Abdirahman",
-    da: 25,
-    fasal: "Pharmacy",
-    guursaday: true,
-    caruur: 1,
-    xiisaha: ["research"],
-    luqadaha: ["English", "Italian"],
-    cinwaan: {
-      magaalo: "Berbera",
-      xaafad: "Haramcad",
-    },
-  },
-  {
-    magac: "Hodan Farah",
-    da: 23,
-    fasal: "Nursing",
-    guursaday: false,
-    xiisaha: ["volunteering", "cooking"],
-    luqadaha: ["Somali", "English"],
-    cinwaan: {
-      magaalo: "Jowhar",
-      xaafad: "Balcad",
-    },
-  },
-  {
-    magac: "Ismail Noor",
-    da: 27,
-    fasal: "Finance",
-    guursaday: true,
-    caruur: 3,
-    xiisaha: ["investing", "reading"],
-    luqadaha: ["Somali", "English"],
-    cinwaan: {
-      magaalo: "Galkayo",
-      xaafad: "Garsoor",
-    },
-  },
-  {
-    magac: "Fadumo Jama",
-    da: 20,
-    fasal: "Education",
-    guursaday: false,
-    xiisaha: ["teaching", "storytelling"],
-    luqadaha: ["Somali", "Arabic"],
-    cinwaan: {
-      magaalo: "Beledweyne",
-      xaafad: "Xaawo Taako",
-    },
-  },
-];
+// next
+const nextsound = () => {
+  audio.pause();
+  isplaying = false;
+  setTimeout(() => {
+    soundIndex++;
+    if (soundIndex > sounds.length - 1) {
+      soundIndex = 0;
+    }
+    Loadsound(sounds[soundIndex]);
+    isplaying = true;
+    audio.play();
+    Play.innerHTML = `<i class="bx bx-pause"></i>`;
+  }, 200);
+};
 
-all.displayUserdata(StudentsData);
+// perv
+const Pervsound = () => {
+  audio.pause();
+  isplaying = false;
+  setTimeout(() => {
+    soundIndex--;
+    if (soundIndex < 0) {
+      soundIndex = sounds.length - 1;
+    }
+    Loadsound(sounds[soundIndex]);
+    isplaying = true;
+    audio.play();
+    Play.innerHTML = `<i class="bx bx-pause"></i>`;
+  }, 200);
+};
 
-class User {
-  static count = 0;
-  constructor(id, name, selery) {
-    this.i = id;
-    this.n = name || "unknown";
-    this.s = selery < 5500 ? selery + 100 : selery;
-    User.count++;
-    this.msg = function () {
-      return `soo dhawaaw ${this.n} your selary is ${this.s}`;
-    };
+const UpdateProg = () => {
+  const currentTime = audio.currentTime;
+  const duration = audio.duration;
+
+  // currentTime minute seconds
+  let currentTime_M = Math.floor(currentTime / 60);
+  let currentTime_s = Math.floor(currentTime % 60);
+
+  // duration minute seconds
+  let duration_m = Math.floor(duration / 60);
+  let duration_s = Math.floor(duration % 60);
+
+  // update html
+  if (currentTime_M < 10) {
+    currentTime_M = `0${currentTime_M}`;
   }
 
-  sayhello() {
-    return this.s > 6000 ? `Good lucky ! ${this.s}` : `Bad lucky`;
+  if (currentTime_s < 10) {
+    currentTime_s = `0${currentTime_s}`;
   }
 
-  updateinfo(name) {
-    this.n = name;
+  if (duration_m < 10) {
+    duration_m = `0${duration_m}`;
   }
 
-  static countMembers() {
-    return `${this.count} Members`;
+  if (duration_s < 10) {
+    duration_s = `0${duration_s}`;
   }
-}
 
-let user1 = new User(100, "Maxamad", 5400);
-let user2 = new User(101, "cismaan", 6400);
-let user4 = new User(105, "Muxsin", 7400);
-console.log(user1.i);
-console.log(user1.n);
-user1.updateinfo("Jumhuur");
-console.log(user1.n);
-console.log(user1.s);
-console.log(user1.msg());
-console.log(user1.sayhello());
-console.log(user1.count);
-console.log("*".repeat(45));
+  TimeNow.textContent = `${currentTime_M}:${currentTime_s}`;
+  Timeduration.textContent = `${duration_m}:${duration_s}`;
 
-console.log(user2.i);
-console.log(user2.n);
-console.log(user2.s);
-console.log(user2.msg());
-console.log(user2.sayhello());
-console.log("*".repeat(45));
-console.log(user4.i);
-console.log(user4.n);
-console.log(user4.s);
-console.log(user4.msg); // native code
-console.log(user2.sayhello); // native code
+  // percentage
+  let percentage = (currentTime / duration) * 100;
+  progress.style.width = `${percentage}%`;
+};
 
-let num1 = 100;
-let num2 = new Number(100);
+const SoundEnd = () => {
+  Play.innerHTML = `<i class="bx bx-play"></i>`;
+};
 
-console.log(typeof num1);
-console.log(typeof num2);
-console.log("*".repeat(45));
-console.log(num1 instanceof Number);
-console.log(num2 instanceof Number);
-console.log("*".repeat(45));
-console.log(num1.constructor == Number);
-console.log(num2.constructor == Number);
+// events
+Play.addEventListener("click", () => {
+  Playsound(audio);
+});
 
-console.log(User.countMembers());
+next.addEventListener("click", nextsound);
+prev.addEventListener("click", Pervsound);
+audio.addEventListener("timeupdate", UpdateProg);
+audio.addEventListener("ended", SoundEnd);
