@@ -1,0 +1,199 @@
+/* Base Styles */
+:root {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #eefcfd; /* Eastern Blue 50 */
+  margin: 0;
+  padding: 20px;
+}
+
+/* Audio Player Container */
+.audio-player {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(26, 156, 184, 0.2); /* Eastern Blue 500 with opacity */
+  overflow: hidden;
+}
+
+/* Player Header */
+.player-header {
+  background-color: #1a9cb8; /* Eastern Blue 500 */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.player-header h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Album Art */
+.album-art {
+  width: 250px;
+  height: 250px;
+  margin: 5px auto;
+  background-color: #d4f5f9; /* Eastern Blue 100 */
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1b6983; /* Eastern Blue 700 */
+  font-size: 14px;
+  box-shadow: 0 5px 15px rgba(26, 156, 184, 0.1);
+  overflow: hidden;
+}
+
+.album-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+.album-art video {
+  width: 250px;
+}
+
+/* Song Info */
+.song-info {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.song-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e485b; /* Eastern Blue 900 */
+  margin-bottom: 5px;
+}
+
+.artist {
+  font-size: 14px;
+  color: #1982a1; /* Eastern Blue 600 */
+  margin-bottom: 20px;
+}
+
+/* Progress Bar */
+.progress-container {
+  padding: 0 20px;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  height: 6px;
+  width: 100%;
+  background-color: #d4f5f9; /* Eastern Blue 100 */
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background-color: #37bfd9; /* Eastern Blue 400 */
+  border-radius: 3px;
+  transition: width 0.1s;
+}
+
+.time-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #1b6983; /* Eastern Blue 700 */
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #1a9cb8; /* Eastern Blue 500 */
+  cursor: pointer;
+  margin: 0 15px;
+  transition: all 0.2s;
+}
+
+.control-btn:hover {
+  color: #0e2e3e; /* Eastern Blue 950 */
+  transform: scale(1.1);
+}
+
+.play-btn {
+  background-color: #1a9cb8; /* Eastern Blue 500 */
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  box-shadow: 0 5px 15px rgba(26, 156, 184, 0.3);
+}
+
+.play-btn:hover {
+  background-color: #0e2e3e; /* Eastern Blue 950 */
+  transform: scale(1.05);
+}
+
+#volume {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 10px;
+  background: #e0e0e0;
+  outline: none;
+  border-radius: 5px;
+}
+
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #1a9cb8;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#volume::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #1a9cb8;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+}
+
+#speed {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#speed:focus {
+  outline: none;
+  border-color: #1b6983;
+}
