@@ -1,19 +1,6 @@
-async function fetchUsers() {
-  try {
-    console.log(" start fetching users");
-
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-
-    if (!response.ok) {
-      throw new Error("wax users ah oo laguu fetch gareeyo ma jiraan");
-    }
-
-    const data = await response.json();
-
-    console.log(`Response data, ${data}`);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-fetchUsers();
+import {
+  getLongWord,
+  getShortWord,
+} from "./Week_19/lesson 152/Week_Exercise.js";
+console.log(getShortWord("waxaad tahay cali laftiisii")); // cali
+console.log(getLongWord("waxaan maata tagay magaalada Hargaysa")); // magaalada
