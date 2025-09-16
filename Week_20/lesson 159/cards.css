@@ -40,11 +40,6 @@ body {
 }
 
 div.cards_rep {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
   flex-flow: wrap row;
   margin: 25px 0px;
 }
