@@ -1,8 +1,10 @@
-import { navAction, IsLogin, ProtectRoute } from "./global.js";
+import { navAction, IsLogin, ProtectRoute, ActiveLink } from "./global.js";
 const elements_links = document.querySelectorAll("li.actions");
 const element_user = document.querySelector("li.User");
+const Links = document.querySelectorAll("a.nav-link");
 navAction(elements_links, element_user);
 ProtectRoute();
+ActiveLink(Links);
 // Mobile menu toggle
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
@@ -128,7 +130,12 @@ signupForm.addEventListener("submit", function (e) {
   };
 
   if (checkuser()) {
-    alert("akoonkan hore ayuu u jiraa !!");
+    // alert("akoonkan hore ayuu u jiraa !!");
+    swal(
+      "This email is already registered !",
+      "Please use a different email or log in to your account.",
+      "error"
+    );
     return;
   }
 

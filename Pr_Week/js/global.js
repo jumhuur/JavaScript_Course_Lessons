@@ -69,4 +69,23 @@ const scrollToSection = () => {
   });
 };
 
-export { IsLogin, navAction, ProtectRoute, Logout, scrollToSection };
+const ActiveLink = (Links) => {
+  console.log(window.location.pathname);
+  Links.forEach((Link) => {
+    console.log(Link.getAttribute("href"));
+    if (`/${Link.getAttribute("href")}` === window.location.pathname) {
+      Link.classList.add("active");
+    } else {
+      Link.classList.remove("active");
+    }
+  });
+};
+
+export {
+  IsLogin,
+  navAction,
+  ProtectRoute,
+  Logout,
+  scrollToSection,
+  ActiveLink,
+};

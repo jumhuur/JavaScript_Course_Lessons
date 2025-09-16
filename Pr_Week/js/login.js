@@ -1,9 +1,11 @@
 // imports
-import { navAction, ProtectRoute } from "./global.js";
+import { navAction, ProtectRoute, ActiveLink } from "./global.js";
 const elements_links = document.querySelectorAll("li.actions");
 const element_user = document.querySelector("li.User");
+const Links = document.querySelectorAll("a.nav-link");
 navAction(elements_links, element_user);
 ProtectRoute();
+ActiveLink(Links);
 // Mobile menu toggle
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
